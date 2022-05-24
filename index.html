@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>My skills</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/@mdi/font@6.x/css/materialdesignicons.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+</head>
+
+<body>
+    <div id="app">
+        <v-app>
+            <v-main class="d-flex flex-column align-center">
+                <v-hover v-slot="{ hover }" class="rounded-xl">
+                    <v-sheet :elevation="hover ? 13 : 2" class="d-flex flex-column align-center ma-13 rounded-lg'" max-width="1600" min-width="300">
+                        <v-sheet class="ma-5 text-pre-wrap rounded-lg">
+
+                            My SKILLS set
+                            SKILLS TABLE (colocar no git/github) + criar uma página bem simples no em vuetify mesmo e no rodapé o texto explicando sobre essa própria pagina:
+
+                            foco deve ser os prints da ultima coluna aí botar um print dessa tabela/site na home do meu GITHUB e um link para abrir. botar tambem no linkedin
+
+                            (UM PRATICO RESUME/CV/SKILLS rapido e facil do empregador entender o que eu sei fazer)
+                        </v-sheet>
+                        <v-sheet class="d-flex flex-column elevation-0" width="80%">
+                            <v-sheet :class="itemRowClass">
+                                <v-sheet :class="toolColClass" :width="toolColWidth">
+                                    <h2>Tool</h2>
+                                </v-sheet>
+                                <v-sheet :class="sinceColClass" :width="sinceColWidth">
+                                    <v-tooltip top nudge-bottom="15">
+                                        <template v-slot:activator="{ on, attrs }">
+                                            <v-sheet class="d-flex flex-row flex-wrap justify-space-between">
+                                                <h2>Since</h2>
+                                                <v-icon small color="grey darken-1" v-bind="attrs" v-on="on"> mdi-information </v-icon>
+                                            </v-sheet>
+                                        </template>
+                                        <span>First time I used the tool.</span>
+                                    </v-tooltip>
+                                </v-sheet>
+
+                                <v-sheet :class="skillLevelColClass" :width="skillLevelColWidth">
+                                    <v-tooltip top nudge-bottom="15">
+                                        <template v-slot:activator="{ on, attrs }">
+                                            <v-sheet class="d-flex flex-row flex-wrap justify-space-between">
+                                                <h2>Skill Level</h2>
+                                                <v-icon small color="grey darken-1" v-bind="attrs" v-on="on"> mdi-information </v-icon>
+                                            </v-sheet>
+                                        </template>
+                                        <v-sheet class="pa-3">
+                                            <span class="text-wrap text-h6">Beginner = I learned some funcionalities and made some working prototypes/demos with it.
+                                                <br>To make bigger solutions, more study and practice will be necessary.
+                                                <br> <br>
+                                                Intermediate = These technologies are not new for me and I can make simple tasks with it. <br>Besides the experience and working solutions, maybe some
+                                                study time will be needed to refresh the memory and code complex things.
+                                                <br> <br>
+                                                Advanced⭐ = It doesnt mean I am a pro or expert, but I can code easier using it. <br>I have reliable and complete running solutions (from backend to
+                                                frontend).
+                                                <br>I can work comfortably with these technologies and complex systems. <br> Short adaptation period and learning curves.<br>Also, I can teach/mentor
+                                                beginners.</span>
+                                        </v-sheet>
+                                    </v-tooltip>
+                                </v-sheet>
+                                <v-sheet :class="moreDetailsColClass" :width="moreDetailsColWidth">
+                                    <v-tooltip top nudge-bottom="15">
+                                        <template v-slot:activator="{ on, attrs }">
+                                            <h2 v-bind="attrs" v-on="on">Projects / Demos</h2>
+                                        </template>
+                                        <span>Done or in progress projects.</span>
+                                    </v-tooltip>
+                                </v-sheet>
+                            </v-sheet>
+                            <v-sheet :class="itemRowClass">
+                                <v-sheet :class="toolColClass" :width="toolColWidth">Windows SO</v-sheet>
+                                <v-sheet :class="sinceColClass" :width="sinceColWidth">90's (Win95)</v-sheet>
+                                <v-sheet :class="skillLevelColClass" :width="skillLevelColWidth">{{intermediateLevelText}}</v-sheet>
+                                <v-sheet :class="moreDetailsColClass" :width="moreDetailsColWidth">-</v-sheet>
+                            </v-sheet>
+                            <v-sheet :class="itemRowClass">
+                                <v-sheet :class="toolColClass" :width="toolColWidth">Ubuntu/Linux terminal</v-sheet>
+                                <v-sheet :class="sinceColClass" :width="sinceColWidth">2007</v-sheet>
+                                <v-sheet :class="skillLevelColClass" :width="skillLevelColWidth">{{intermediateLevelText}}</v-sheet>
+                                <v-sheet :class="moreDetailsColClass" :width="moreDetailsColWidth">-</v-sheet>
+                            </v-sheet>
+                            <v-sheet :class="itemRowClass">
+                                <v-sheet :class="toolColClass" :width="toolColWidth">Google Apps Script</v-sheet>
+                                <v-sheet :class="sinceColClass" :width="sinceColWidth">2017</v-sheet>
+                                <v-sheet :class="skillLevelColClass" :width="skillLevelColWidth">{{advancedLevelText}}</v-sheet>
+                                <v-sheet :class="moreDetailsColClass" :width="moreDetailsColWidth">
+                                    <v-tooltip bottom>
+                                        <template v-slot:activator="{ on, attrs }">
+                                            <v-sheet class="d-flex flex-row flex-wrap justify-space-between">
+                                                <span v-bind="attrs" v-on="on">
+                                                    <a href="https://www.youtube.com/watch?v=SmLma0JgiRg" target="_blank"> YouTube Tutorials </a>
+                                                </span>
+                                            </v-sheet>
+                                        </template>
+                                        <v-sheet class="pa-3">
+                                            <img src="./assets/youtube-tutorial-screenshot.png" width="500" />
+                                        </v-sheet>
+                                    </v-tooltip>
+                                </v-sheet>
+                            </v-sheet>
+                            <v-sheet :class="itemRowClass">
+                                <v-sheet :class="toolColClass" :width="toolColWidth">HTML/CSS</v-sheet>
+                                <v-sheet :class="sinceColClass" :width="sinceColWidth">2003</v-sheet>
+                                <v-sheet :class="skillLevelColClass" :width="skillLevelColWidth">{{intermediateLevelText}}</v-sheet>
+                                <v-sheet :class="moreDetailsColClass" :width="moreDetailsColWidth">-</v-sheet>
+                            </v-sheet>
+                            <v-sheet :class="itemRowClass">
+                                <v-sheet :class="toolColClass" :width="toolColWidth">JavaScript</v-sheet>
+                                <v-sheet :class="sinceColClass" :width="sinceColWidth">2007</v-sheet>
+                                <v-sheet :class="skillLevelColClass" :width="skillLevelColWidth">{{intermediateLevelText}}</v-sheet>
+                                <v-sheet :class="moreDetailsColClass" :width="moreDetailsColWidth">-</v-sheet>
+                            </v-sheet>
+                            <v-sheet :class="itemRowClass">
+                                <v-sheet :class="toolColClass" :width="toolColWidth">Ubuntu/Linux terminal</v-sheet>
+                                <v-sheet :class="sinceColClass" :width="sinceColWidth">2007</v-sheet>
+                                <v-sheet :class="skillLevelColClass" :width="skillLevelColWidth">{{intermediateLevelText}}</v-sheet>
+                                <v-sheet :class="moreDetailsColClass" :width="moreDetailsColWidth">-</v-sheet>
+                            </v-sheet>
+                            <v-sheet :class="itemRowClass">
+                                <v-sheet :class="toolColClass" :width="toolColWidth">Ubuntu/Linux terminal</v-sheet>
+                                <v-sheet :class="sinceColClass" :width="sinceColWidth">2007</v-sheet>
+                                <v-sheet :class="skillLevelColClass" :width="skillLevelColWidth">{{intermediateLevelText}}</v-sheet>
+                                <v-sheet :class="moreDetailsColClass" :width="moreDetailsColWidth">-</v-sheet>
+                            </v-sheet>
+                            <v-sheet :class="itemRowClass">
+                                <v-sheet :class="toolColClass" :width="toolColWidth">Ubuntu/Linux terminal</v-sheet>
+                                <v-sheet :class="sinceColClass" :width="sinceColWidth">2007</v-sheet>
+                                <v-sheet :class="skillLevelColClass" :width="skillLevelColWidth">{{intermediateLevelText}}</v-sheet>
+                                <v-sheet :class="moreDetailsColClass" :width="moreDetailsColWidth">-</v-sheet>
+                            </v-sheet>
+                            <v-sheet :class="itemRowClass">
+                                <v-sheet :class="toolColClass" :width="toolColWidth">Ubuntu/Linux terminal</v-sheet>
+                                <v-sheet :class="sinceColClass" :width="sinceColWidth">2007</v-sheet>
+                                <v-sheet :class="skillLevelColClass" :width="skillLevelColWidth">{{intermediateLevelText}}</v-sheet>
+                                <v-sheet :class="moreDetailsColClass" :width="moreDetailsColWidth">-</v-sheet>
+                            </v-sheet>
+                            <v-sheet :class="itemRowClass">
+                                <v-sheet :class="toolColClass" :width="toolColWidth">Ubuntu/Linux terminal</v-sheet>
+                                <v-sheet :class="sinceColClass" :width="sinceColWidth">2007</v-sheet>
+                                <v-sheet :class="skillLevelColClass" :width="skillLevelColWidth">{{intermediateLevelText}}</v-sheet>
+                                <v-sheet :class="moreDetailsColClass" :width="moreDetailsColWidth">-</v-sheet>
+                            </v-sheet>
+                            <v-sheet :class="itemRowClass">
+                                <v-sheet :class="toolColClass" :width="toolColWidth">Ubuntu/Linux terminal</v-sheet>
+                                <v-sheet :class="sinceColClass" :width="sinceColWidth">2007</v-sheet>
+                                <v-sheet :class="skillLevelColClass" :width="skillLevelColWidth">{{intermediateLevelText}}</v-sheet>
+                                <v-sheet :class="moreDetailsColClass" :width="moreDetailsColWidth">-</v-sheet>
+                            </v-sheet>
+                            <v-sheet :class="itemRowClass">
+                                <v-sheet :class="toolColClass" :width="toolColWidth">Ubuntu/Linux terminal</v-sheet>
+                                <v-sheet :class="sinceColClass" :width="sinceColWidth">2007</v-sheet>
+                                <v-sheet :class="skillLevelColClass" :width="skillLevelColWidth">{{intermediateLevelText}}</v-sheet>
+                                <v-sheet :class="moreDetailsColClass" :width="moreDetailsColWidth">-</v-sheet>
+                            </v-sheet>
+                            <v-sheet :class="itemRowClass">
+                                <v-sheet :class="toolColClass" :width="toolColWidth">Ubuntu/Linux terminal</v-sheet>
+                                <v-sheet :class="sinceColClass" :width="sinceColWidth">2007</v-sheet>
+                                <v-sheet :class="skillLevelColClass" :width="skillLevelColWidth">{{intermediateLevelText}}</v-sheet>
+                                <v-sheet :class="moreDetailsColClass" :width="moreDetailsColWidth">-</v-sheet>
+                            </v-sheet>
+                            <v-sheet :class="itemRowClass">
+                                <v-sheet :class="toolColClass" :width="toolColWidth">Ubuntu/Linux terminal</v-sheet>
+                                <v-sheet :class="sinceColClass" :width="sinceColWidth">2007</v-sheet>
+                                <v-sheet :class="skillLevelColClass" :width="skillLevelColWidth">{{intermediateLevelText}}</v-sheet>
+                                <v-sheet :class="moreDetailsColClass" :width="moreDetailsColWidth">-</v-sheet>
+                            </v-sheet>
+                            <v-sheet :class="itemRowClass">
+                                <v-sheet :class="toolColClass" :width="toolColWidth">Ubuntu/Linux terminal</v-sheet>
+                                <v-sheet :class="sinceColClass" :width="sinceColWidth">2007</v-sheet>
+                                <v-sheet :class="skillLevelColClass" :width="skillLevelColWidth">{{intermediateLevelText}}</v-sheet>
+                                <v-sheet :class="moreDetailsColClass" :width="moreDetailsColWidth">-</v-sheet>
+                            </v-sheet>
+                            <v-sheet :class="itemRowClass">
+                                <v-sheet :class="toolColClass" :width="toolColWidth">Ubuntu/Linux terminal</v-sheet>
+                                <v-sheet :class="sinceColClass" :width="sinceColWidth">2007</v-sheet>
+                                <v-sheet :class="skillLevelColClass" :width="skillLevelColWidth">{{intermediateLevelText}}</v-sheet>
+                                <v-sheet :class="moreDetailsColClass" :width="moreDetailsColWidth">-</v-sheet>
+                            </v-sheet>
+                            <v-sheet :class="itemRowClass">
+                                <v-sheet :class="toolColClass" :width="toolColWidth">Ubuntu/Linux terminal</v-sheet>
+                                <v-sheet :class="sinceColClass" :width="sinceColWidth">2007</v-sheet>
+                                <v-sheet :class="skillLevelColClass" :width="skillLevelColWidth">{{intermediateLevelText}}</v-sheet>
+                                <v-sheet :class="moreDetailsColClass" :width="moreDetailsColWidth">-</v-sheet>
+                            </v-sheet>
+                            <v-sheet :class="itemRowClass">
+                                <v-sheet :class="toolColClass" :width="toolColWidth">Ubuntu/Linux terminal</v-sheet>
+                                <v-sheet :class="sinceColClass" :width="sinceColWidth">2007</v-sheet>
+                                <v-sheet :class="skillLevelColClass" :width="skillLevelColWidth">{{intermediateLevelText}}</v-sheet>
+                                <v-sheet :class="moreDetailsColClass" :width="moreDetailsColWidth">-</v-sheet>
+                            </v-sheet>
+                            <v-sheet :class="itemRowClass">
+                                <v-sheet :class="toolColClass" :width="toolColWidth">Ubuntu/Linux terminal</v-sheet>
+                                <v-sheet :class="sinceColClass" :width="sinceColWidth">2007</v-sheet>
+                                <v-sheet :class="skillLevelColClass" :width="skillLevelColWidth">{{intermediateLevelText}}</v-sheet>
+                                <v-sheet :class="moreDetailsColClass" :width="moreDetailsColWidth">-</v-sheet>
+                            </v-sheet>
+                        </v-sheet>
+
+                        <v-sheet class="ma-5 text-wrap">
+                            Web page built with <b>VUE.JS</b>,
+                            a framework running over <b>NODE.JS</b>, using <b>JAVASCRIPT</b>, <b>HTML</b> and <b>CSS</b>.
+                            In addition, used some <b>MATERIAL DESIGN ICONS</b>.
+                            Hosted in a Linux <b>UBUNTU</b>
+                            dedicated server at <b>DIGITALOCEAN</b> cloud infraestructure. Version control by <b>GIT</b> and <b>GITHUB</b>.
+                            Reverse proxy with <b>NGINX</b>. <b>SSL</b> certification with <b>CERTBOT</b> and Linux process management with <b>PM2</b>.
+                        </v-sheet>
+                    </v-sheet>
+                </v-hover>
+            </v-main>
+        </v-app>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.js"></script>
+    <script>
+        new Vue({
+            el: '#app',
+            vuetify: new Vuetify(),
+
+            data() {
+                return {
+                    itemRowClass: 'd-flex flex-row elevation-0 flex-wrap',
+                    toolColClass: 'px-2 pt-1 elevation-2',
+                    sinceColClass: 'px-2 pt-1 elevation-2',
+                    skillLevelColClass: 'px-2 pt-1 elevation-2',
+                    moreDetailsColClass: 'px-2 pt-1 elevation-2',
+                    toolColWidth: '25%',
+                    sinceColWidth: '15%',
+                    skillLevelColWidth: '20%',
+                    moreDetailsColWidth: '40%',
+                    beginnerLevelText: "Beginner",
+                    intermediateLevelText: "Intermediate",
+                    advancedLevelText: "Advanced⭐"
+                }
+            }
+        })
+
+    </script>
+</body>
+
+</html>
