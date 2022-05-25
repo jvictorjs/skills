@@ -19,9 +19,9 @@
                         <v-sheet class="mx-10 mt-10 d-flex flex-wrap align-start justify-space-around " :width="$vuetify.breakpoint.mobile ? '90%' : '90%'">
                             <v-tooltip bottom>
                                 <template v-slot:activator="{ on, attrs }">
-                                    <span class="ma-1 elevation-0" v-bind="attrs" v-on="on">
+                                    <span class="ma-1 mx-2 elevation-0" v-bind="attrs" v-on="on">
                                         <a href="https://github.com/jvictorjs" target="_blank" style="text-decoration: none">
-                                            <v-sheet class="rounded">
+                                            <v-sheet class="rounded logo">
                                                 <v-icon large color="black darken-1"> mdi-github </v-icon> jvictorjs
                                             </v-sheet>
                                         </a>
@@ -31,9 +31,9 @@
                             </v-tooltip>
                             <v-tooltip bottom>
                                 <template v-slot:activator="{ on, attrs }">
-                                    <span class="ma-1 elevation-0" v-bind="attrs" v-on="on">
+                                    <span class="ma-1 mx-2 elevation-0" v-bind="attrs" v-on="on">
                                         <a href="https://twitter.com/jvictor_js" target="_blank" style="text-decoration: none">
-                                            <v-sheet class="rounded">
+                                            <v-sheet class="rounded logo">
                                                 <v-icon large color="black darken-1"> mdi-twitter </v-icon> @jvictor_js
                                             </v-sheet>
                                         </a>
@@ -43,21 +43,22 @@
                             </v-tooltip>
                             <v-tooltip bottom>
                                 <template v-slot:activator="{ on, attrs }">
-                                    <span class="ma-1 elevation-0" v-bind="attrs" v-on="on">
+                                    <span class="ma-1 mx-2 elevation-0" v-bind="attrs" v-on="on">
                                         <a href="https://portfolio.jvictor.com.br" target="_blank" style="text-decoration: none">
-                                            <v-sheet class="rounded">
+                                            <v-sheet class="rounded logo">
                                                 <v-icon large color="black darken-1"> mdi-briefcase </v-icon> Porfolio
                                             </v-sheet>
                                         </a>
                                     </span>
                                 </template>
-                                My Portfolio webpage (try the demos)
+                                2020-2021 Portfolio webpage (try the demos)<br>
+                                The 'Projects' menu is empty there, I'm updating the descriptions and urls.
                             </v-tooltip>
                             <v-tooltip bottom>
                                 <template v-slot:activator="{ on, attrs }">
-                                    <span class="ma-1 elevation-0" v-bind="attrs" v-on="on">
+                                    <span class="ma-1 mx-2 elevation-0" v-bind="attrs" v-on="on">
                                         <a href="https://www.youtube.com/user/jvwrCIN" target="_blank" style="text-decoration: none">
-                                            <v-sheet class="rounded">
+                                            <v-sheet class="rounded logo">
                                                 <v-icon large color="black darken-1"> mdi-youtube </v-icon> YouTube
                                             </v-sheet>
                                         </a>
@@ -67,9 +68,9 @@
                             </v-tooltip>
                             <v-tooltip bottom>
                                 <template v-slot:activator="{ on, attrs }">
-                                    <span class="ma-1 elevation-0" v-bind="attrs" v-on="on">
+                                    <span class="ma-1 mx-2 elevation-0" v-bind="attrs" v-on="on">
                                         <a href="https://www.linkedin.com/in/joão-victor-ramos-6570a21b7/" target="_blank" style="text-decoration: none; color: #000000">
-                                            <v-sheet class="rounded px-1">
+                                            <v-sheet class="rounded logo">
                                                 <v-icon large color="black darken-1"> mdi-linkedin </v-icon> LinkedIn
                                             </v-sheet>
                                         </a>
@@ -483,11 +484,11 @@
                             </v-sheet>
                         </v-sheet>
 
-                        <v-sheet class="mt-5 mx-15 text-wrap text-center text-caption">
+                        <v-sheet class="mt-5 mx-15 text-wrap text-center text-caption text--secondary">
                             Responsive web page built from scratch with <b>VUE.JS</b>,
                             a framework running over <b>NODE.JS</b>, using <b>JAVASCRIPT</b>, <b>HTML</b> and <b>CSS</b>.
                             In addition, to faster and beauty design I used <b>VUETIFY</b> UI library and some <b>MATERIAL DESIGN ICONS</b>.
-                            Dosted in a Linux <b>UBUNTU</b>
+                            Hosted in a Linux <b>UBUNTU</b>
                             dedicated server at <b>DIGITALOCEAN</b> cloud infraestructure. Version control by <b>GIT</b> and <b>GITHUB</b>.
                             Reverse proxy with <b>NGINX</b>. <b>SSL</b> certification with <b>CERTBOT</b> and Linux process management with <b>PM2</b> | screen res:
                             {{$vuetify.breakpoint.width}}x{{$vuetify.breakpoint.height}}
@@ -530,3 +531,18 @@
 </body>
 
 </html>
+
+<style>
+    .logo {
+        transition: transform 0.5s;
+        vertical-align: middle;
+    }
+
+    .logo:hover {
+        -ms-transform: scale(1.35);
+        /* IE 9 */
+        -webkit-transform: scale(1.35);
+        /* Safari 3-8 */
+        transform: scale(1.35);
+    }
+</style>
