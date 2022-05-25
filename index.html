@@ -15,7 +15,11 @@
         <v-app>
             <v-main class="d-flex flex-column align-center grey darken-3">
                 <v-hover v-slot="{ hover }" class="rounded-xl">
-                    <v-sheet :elevation="hover ? 13 : 2" :class="($vuetify.breakpoint.width < 800 ? 'ma-5' : 'ma-13' )+' d-flex flex-column align-center rounded-lg'" max-width="1200" min-width="250">
+                    <v-sheet v-if="loading">
+                        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+                    </v-sheet>
+                    <v-sheet v-else :elevation="hover ? 13 : 2" :class="($vuetify.breakpoint.width < 800 ? 'ma-5' : 'ma-13' )+' d-flex flex-column align-center rounded-lg'" max-width="1200"
+                        min-width="250">
                         <v-sheet class="mx-10 mt-10 d-flex flex-wrap align-start justify-space-around " :width="$vuetify.breakpoint.mobile ? '90%' : '90%'">
                             <v-tooltip bottom>
                                 <template v-slot:activator="{ on, attrs }">
@@ -498,6 +502,7 @@
                         </v-sheet>
                     </v-sheet>
                 </v-hover>
+
             </v-main>
         </v-app>
     </div>
@@ -509,8 +514,16 @@
             el: '#app',
             vuetify: new Vuetify(),
 
+            created() {
+                console.log('created ' + new Date())
+            },
+            mounted() {
+                console.log('mounted ' + new Date())
+                this.loading = false
+            },
             data() {
                 return {
+                    loading: true,
                     itemRowClass: 'd-flex flex-row elevation-0 flex-wrap',
                     toolColClass: 'px-2 pt-1 elevation-2 text-wrap',
                     sinceColClass: 'px-2 pt-1 elevation-2 text-wrap',
