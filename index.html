@@ -15,8 +15,8 @@
         <v-app>
             <v-main class="d-flex flex-column align-center grey darken-3">
                 <v-hover v-slot="{ hover }" class="rounded-xl">
-                    <v-sheet :elevation="hover ? 13 : 2" class="d-flex flex-column align-center ma-13 rounded-lg'" max-width="1200" min-width="250">
-                        <v-sheet class="ma-10 d-flex flex-wrap align-center justify-space-around" width="90%">
+                    <v-sheet :elevation="hover ? 13 : 2" :class="($vuetify.breakpoint.mobile ? 'ma-3' : 'ma-13' )+' d-flex flex-column align-center rounded-lg'" max-width="1200" min-width="250">
+                        <v-sheet class="ma-10 d-flex flex-wrap align-center justify-space-around" :width="$vuetify.breakpoint.mobile ? '90%' : '90%'">
                             <v-tooltip bottom>
                                 <template v-slot:activator="{ on, attrs }">
                                     <span class="elevation-0" v-bind="attrs" v-on="on">
@@ -78,13 +78,13 @@
                                 LinkedIn profile
                             </v-tooltip>
                         </v-sheet>
-                        <v-sheet class="mt-0 mx-15 text-wrap rounded-lg d-flex flex-column align-start">
+                        <v-sheet :class="$vuetify.breakpoint.mobile ? 'mx-7' : 'mx-15' +' mt-0 rounded-lg d-flex flex-column align-start'">
                             <h3>Brief career history:</h3>
-                            <span>- <b>2007-2012</b> CS degree</span>
-                            <span>- <b>2014-now</b> current job at Ministry of Economy of Brazil</span>
-                            <span>- <b>2016</b>: start working with Data ETL/BI processes with Pentaho Data Integration and QlikSense</span>
-                            <span>- <b>2017</b>: start working with Google Apps Script creating chatbots with JavaScript for personal projects</span>
-                            <span>- <b>2020</b>: migrated my work from Data/BI to frontend development: more JavaScript with React, Angular and Vue</span>
+                            <span>- <b>2007-2012</b> CS degree</span><br>
+                            <span>- <b>2014-now</b> current job at Ministry of Economy of Brazil</span><br>
+                            <span>- <b>2016</b>: start working with Data ETL/BI processes with Pentaho Data Integration and QlikSense</span><br>
+                            <span>- <b>2017</b>: start working with Google Apps Script creating chatbots with JavaScript for personal projects</span><br>
+                            <span>- <b>2020</b>: migrated my work from Data/BI to frontend development: more JavaScript with React, Angular and Vue</span><br>
                             <span>- <b>2022</b>: Vue.js and React enthusiast
                                 <v-sheet>
                                     <v-tooltip bottom>
@@ -185,7 +185,7 @@
                                 <br>
                                 <h3>Techs</h3>
                         </v-sheet>
-                        <v-sheet class="mt-n1 d-flex flex-column elevation-0" width="80%">
+                        <v-sheet class="mt-n1 d-flex flex-column elevation-0" :width="$vuetify.breakpoint.mobile ? '95%' : '80%'">
                             <v-sheet :class="itemRowClass">
                                 <v-sheet :class="toolColClass" :width="toolColWidth">
                                     <h3>Tool</h3>
@@ -193,7 +193,7 @@
                                 <v-sheet :class="sinceColClass" :width="sinceColWidth">
                                     <v-tooltip top nudge-bottom="15">
                                         <template v-slot:activator="{ on, attrs }">
-                                            <v-sheet class="d-flex flex-row flex-wrap justify-space-between">
+                                            <v-sheet class="d-flex flex-row flex-wrap text-wrap justify-space-between">
                                                 <h3>Since</h3>
                                                 <v-icon small color="grey darken-1" v-bind="attrs" v-on="on"> mdi-information </v-icon>
                                             </v-sheet>
@@ -503,14 +503,14 @@
             data() {
                 return {
                     itemRowClass: 'd-flex flex-row elevation-0 flex-wrap',
-                    toolColClass: 'px-2 pt-1 elevation-2',
-                    sinceColClass: 'px-2 pt-1 elevation-2',
-                    skillLevelColClass: 'px-2 pt-1 elevation-2',
-                    moreDetailsColClass: 'px-2 pt-1 elevation-2',
+                    toolColClass: 'px-2 pt-1 elevation-2 text-wrap',
+                    sinceColClass: 'px-2 pt-1 elevation-2 text-wrap',
+                    skillLevelColClass: 'px-2 pt-1 elevation-2 text-wrap',
+                    moreDetailsColClass: 'px-2 pt-1 elevation-2 text-wrap',
                     toolColWidth: '25%',
-                    sinceColWidth: '13%',
+                    sinceColWidth: '15%',
                     skillLevelColWidth: '20%',
-                    moreDetailsColWidth: '42%',
+                    moreDetailsColWidth: '40%',
                     beginnerLevelText: "Beginner",
                     intermediateLevelText: "Intermediate",
                     advancedLevelText: "Advanced⭐"
