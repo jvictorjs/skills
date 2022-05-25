@@ -15,11 +15,11 @@
         <v-app>
             <v-main class="d-flex flex-column align-center grey darken-3">
                 <v-hover v-slot="{ hover }" class="rounded-xl">
-                    <v-sheet :elevation="hover ? 13 : 2" :class="($vuetify.breakpoint.mobile ? 'ma-3' : 'ma-13' )+' d-flex flex-column align-center rounded-lg'" max-width="1200" min-width="250">
-                        <v-sheet class="ma-10 d-flex flex-wrap align-center justify-space-around" :width="$vuetify.breakpoint.mobile ? '90%' : '90%'">
+                    <v-sheet :elevation="hover ? 13 : 2" :class="($vuetify.breakpoint.width < 800 ? 'ma-5' : 'ma-13' )+' d-flex flex-column align-center rounded-lg'" max-width="1200" min-width="250">
+                        <v-sheet class="ma-10 d-flex flex-wrap align-start justify-space-around " :width="$vuetify.breakpoint.mobile ? '90%' : '90%'">
                             <v-tooltip bottom>
                                 <template v-slot:activator="{ on, attrs }">
-                                    <span class="elevation-0" v-bind="attrs" v-on="on">
+                                    <span class="ma-1 elevation-0" v-bind="attrs" v-on="on">
                                         <a href="https://github.com/jvictorjs" target="_blank" style="text-decoration: none">
                                             <v-sheet class="rounded">
                                                 <v-icon large color="black darken-1"> mdi-github </v-icon> jvictorjs
@@ -31,7 +31,7 @@
                             </v-tooltip>
                             <v-tooltip bottom>
                                 <template v-slot:activator="{ on, attrs }">
-                                    <span class="elevation-0" v-bind="attrs" v-on="on">
+                                    <span class="ma-1 elevation-0" v-bind="attrs" v-on="on">
                                         <a href="https://twitter.com/jvictor_js" target="_blank" style="text-decoration: none">
                                             <v-sheet class="rounded">
                                                 <v-icon large color="black darken-1"> mdi-twitter </v-icon> @jvictor_js
@@ -43,7 +43,7 @@
                             </v-tooltip>
                             <v-tooltip bottom>
                                 <template v-slot:activator="{ on, attrs }">
-                                    <span class="elevation-0" v-bind="attrs" v-on="on">
+                                    <span class="ma-1 elevation-0" v-bind="attrs" v-on="on">
                                         <a href="https://portfolio.jvictor.com.br" target="_blank" style="text-decoration: none">
                                             <v-sheet class="rounded">
                                                 <v-icon large color="black darken-1"> mdi-briefcase </v-icon> Porfolio
@@ -55,7 +55,7 @@
                             </v-tooltip>
                             <v-tooltip bottom>
                                 <template v-slot:activator="{ on, attrs }">
-                                    <span class="elevation-0" v-bind="attrs" v-on="on">
+                                    <span class="ma-1 elevation-0" v-bind="attrs" v-on="on">
                                         <a href="https://www.youtube.com/user/jvwrCIN" target="_blank" style="text-decoration: none">
                                             <v-sheet class="rounded">
                                                 <v-icon large color="black darken-1"> mdi-youtube </v-icon> YouTube
@@ -67,7 +67,7 @@
                             </v-tooltip>
                             <v-tooltip bottom>
                                 <template v-slot:activator="{ on, attrs }">
-                                    <span class="elevation-0" v-bind="attrs" v-on="on">
+                                    <span class="ma-1 elevation-0" v-bind="attrs" v-on="on">
                                         <a href="https://www.linkedin.com/in/joão-victor-ramos-6570a21b7/" target="_blank" style="text-decoration: none; color: #000000">
                                             <v-sheet class="rounded px-1">
                                                 <v-icon large color="black darken-1"> mdi-linkedin </v-icon> LinkedIn
@@ -78,60 +78,62 @@
                                 LinkedIn profile
                             </v-tooltip>
                         </v-sheet>
-                        <v-sheet :class="$vuetify.breakpoint.mobile ? 'mx-7' : 'mx-15' +' mt-0 rounded-lg d-flex flex-column align-start'">
+                        <v-sheet :class="$vuetify.breakpoint.mobile ? 'mx-7' : 'mx-15' +' mt-0 rounded-lg d-flex flex-column align-start elevation-0'" width="90%">
                             <h3>Brief career history:</h3>
-                            <span>- <b>2007-2012</b> CS degree</span><br>
-                            <span>- <b>2014-now</b> current job at Ministry of Economy of Brazil</span><br>
-                            <span>- <b>2016</b>: start working with Data ETL/BI processes with Pentaho Data Integration and QlikSense</span><br>
-                            <span>- <b>2017</b>: start working with Google Apps Script creating chatbots with JavaScript for personal projects</span><br>
-                            <span>- <b>2020</b>: migrated my work from Data/BI to frontend development: more JavaScript with React, Angular and Vue</span><br>
-                            <span>- <b>2022</b>: Vue.js and React enthusiast
-                                <v-sheet>
-                                    <v-tooltip bottom>
-                                        <template v-slot:activator="{ on, attrs }">
-                                            <v-sheet class="d-flex flex-row flex-wrap justify-space-between">
-                                                <v-icon small color="grey darken-1" v-bind="attrs" v-on="on"> mdi-dots-horizontal </v-icon>
-                                            </v-sheet>
-                                        </template>
-                                        <v-sheet max-width="800">
-                                            I am the creator and developer of:
-                                            Tremdgol app playstore url
-                                            Bolanarede.net.br url
-                                            Tremdgol Web url
-
-                                            Soccer statics app
-
-
-
-                                            Here it is my portfolio web page from 2021. Inside it are some demos using Javascript audio and web sockets, for example. A brand new portfolio page is
-                                            coming
-                                            soon.
-
-                                            I am full stack JavasScript developer with frontend emphasis that worked with Vue, React and Angular. These days I am using more Vue and and the Vuetify
-                                            library
-                                            to faster release beauty products.
-
-                                            I eventually make some tutorial videos for YouTube. The most popular are the Creating a Telegram chatbot with a Google Sheet series. Wich I am still
-                                            producing
-                                            and people really liked. I love chatbots. I use dozens of ones ona daily basis, from simple task lists to mom's medicine time reminders, they help me a lot.
-
-                                            I have a Computer Science bachelor degree (2012) and experience with SQL and data integration with the pentaho suite, Google Apps Script integration with
-                                            Google
-                                            Docs using JavaScript. Nowadays I am focused on frontend JS libraries, using React and Vue in most of my recent works.
-
-
-                                            jvictorjs/README.md
-                                            - 👋 Hi, I’m @jvictorjs
-                                            - 👀 I’m interested in ...
-                                            - 🌱 I’m currently learning ...
-                                            - 💞 I’m looking to collaborate on ...
-                                            - 📫 How to reach me ...
-
+                            <span class="d-flex"><b class="mr-3">2012</b> CS degree</span>
+                            <span class="d-flex"><b class="mr-3">2014</b> Started my current job at Ministry of Economy of Brazil</span>
+                            <span class="d-flex"><b class="mr-3">2016</b> Started working with Data ETL/BI processes with Pentaho Data Integration and QlikSense</span>
+                            <span class="d-flex"><b class="mr-3">2017</b> Started personal projects with Google Apps Script: creating chatbots with JavaScript</span>
+                            <span class="d-flex"><b class="mr-3">2020</b> Work migration from Data/BI to frontend development: more JavaScript with Vue.js</span>
+                            <span class="d-flex"><b class="mr-3">2021</b> First Playstore mobile app release (React Native)</span>
+                            <span class="d-flex"><b class="mr-3">2022</b> Vue.js and React Native enthusiast</span>
+                            <v-sheet>
+                                <v-tooltip bottom>
+                                    <template v-slot:activator="{ on, attrs }">
+                                        <v-sheet class="d-flex flex-row flex-wrap justify-space-between">
+                                            <v-icon small color="grey darken-1" v-bind="attrs" v-on="on"> mdi-dots-horizontal </v-icon>
                                         </v-sheet>
-                                    </v-tooltip>
-                                </v-sheet>
-                                <br><br>
-                                <h3>My bets projects</h3>
+                                    </template>
+                                    <v-sheet max-width="800">
+                                        I am the creator and developer of:
+                                        Tremdgol app playstore url
+                                        Bolanarede.net.br url
+                                        Tremdgol Web url
+
+                                        Soccer statics app
+
+
+
+                                        Here it is my portfolio web page from 2021. Inside it are some demos using Javascript audio and web sockets, for example. A brand new portfolio page is
+                                        coming
+                                        soon.
+
+                                        I am full stack JavasScript developer with frontend emphasis that worked with Vue, React and Angular. These days I am using more Vue and and the Vuetify
+                                        library
+                                        to faster release beauty products.
+
+                                        I eventually make some tutorial videos for YouTube. The most popular are the Creating a Telegram chatbot with a Google Sheet series. Wich I am still
+                                        producing
+                                        and people really liked. I love chatbots. I use dozens of ones ona daily basis, from simple task lists to mom's medicine time reminders, they help me a lot.
+
+                                        I have a Computer Science bachelor degree (2012) and experience with SQL and data integration with the pentaho suite, Google Apps Script integration with
+                                        Google
+                                        Docs using JavaScript. Nowadays I am focused on frontend JS libraries, using React and Vue in most of my recent works.
+
+
+                                        jvictorjs/README.md
+                                        - 👋 Hi, I’m @jvictorjs
+                                        - 👀 I’m interested in ...
+                                        - 🌱 I’m currently learning ...
+                                        - 💞 I’m looking to collaborate on ...
+                                        - 📫 How to reach me ...
+
+                                    </v-sheet>
+                                </v-tooltip>
+                            </v-sheet>
+                            <br>
+                            <h3>My bets projects</h3>
+                            <v-sheet class="d-flex flex-column">
                                 <v-tooltip bottom>
                                     <template v-slot:activator="{ on, attrs }">
                                         <span class="elevation-0" v-bind="attrs" v-on="on">
@@ -142,7 +144,7 @@
                                     <v-sheet>
                                         <img src="./assets/playsotre-tremdgol-free-screenshot.png" width="500" />
                                     </v-sheet>
-                                </v-tooltip><br>
+                                </v-tooltip>
                                 <v-tooltip bottom>
                                     <template v-slot:activator="{ on, attrs }">
                                         <span class="elevation-0" v-bind="attrs" v-on="on">
@@ -153,7 +155,7 @@
                                     <v-sheet>
                                         <img src="./assets/bolanarede-screenshot.png" width="500" />
                                     </v-sheet>
-                                </v-tooltip><br>
+                                </v-tooltip>
                                 <v-tooltip bottom>
                                     <template v-slot:activator="{ on, attrs }">
                                         <span class="elevation-0" v-bind="attrs" v-on="on">
@@ -164,7 +166,7 @@
                                     <v-sheet>
                                         comming soon...
                                     </v-sheet>
-                                </v-tooltip><br>
+                                </v-tooltip>
                                 <v-tooltip bottom>
                                     <template v-slot:activator="{ on, attrs }">
                                         <span class="elevation-0" v-bind="attrs" v-on="on">
@@ -177,24 +179,24 @@
                                         <img src="./assets/youtube-tutorial-screenshot.png" width="500" />
                                     </v-sheet>
                                 </v-tooltip>
-
-                                <br><br>foco deve ser os prints da ultima coluna aí botar um print dessa tabela/site na home do meu GITHUB e um link para abrir. botar tambem no linkedin
-
-                                (UM PRATICO RESUME/CV/SKILLS rapido e facil do empregador entender o que eu sei fazer)
-                                <br>
-                                <br>
-                                <h3>Techs</h3>
+                            </v-sheet>
+                            <br>
+                            <h3>Techs</h3>
                         </v-sheet>
-                        <v-sheet class="mt-n1 d-flex flex-column elevation-0" :width="$vuetify.breakpoint.mobile ? '95%' : '80%'">
+                        <v-sheet v-if="$vuetify.breakpoint.width < 600" class="my-3 text-center">
+                            PLEASE ROTATE YOUR DEVICE
+                            <v-icon large color="grey darken-1"> mdi-phone-rotate-landscape </v-icon>
+                        </v-sheet>
+                        <v-sheet v-else class="mt-1 d-flex flex-column elevation-0" :width="$vuetify.breakpoint.mobile ? '90%' : '80%'">
                             <v-sheet :class="itemRowClass">
                                 <v-sheet :class="toolColClass" :width="toolColWidth">
-                                    <h3>Tool</h3>
+                                    <h4>Tool</h4>
                                 </v-sheet>
                                 <v-sheet :class="sinceColClass" :width="sinceColWidth">
                                     <v-tooltip top nudge-bottom="15">
                                         <template v-slot:activator="{ on, attrs }">
                                             <v-sheet class="d-flex flex-row flex-wrap text-wrap justify-space-between">
-                                                <h3>Since</h3>
+                                                <h4>Since</h4>
                                                 <v-icon small color="grey darken-1" v-bind="attrs" v-on="on"> mdi-information </v-icon>
                                             </v-sheet>
                                         </template>
@@ -206,7 +208,7 @@
                                     <v-tooltip top nudge-bottom="15">
                                         <template v-slot:activator="{ on, attrs }">
                                             <v-sheet class="d-flex flex-row flex-wrap justify-space-between">
-                                                <h3>Skill Level</h3>
+                                                <h4>Skill Level</h4>
                                                 <v-icon small color="grey darken-1" v-bind="attrs" v-on="on"> mdi-information </v-icon>
                                             </v-sheet>
                                         </template>
@@ -227,7 +229,7 @@
                                 <v-sheet :class="moreDetailsColClass" :width="moreDetailsColWidth">
                                     <v-tooltip top nudge-bottom="15">
                                         <template v-slot:activator="{ on, attrs }">
-                                            <h3 v-bind="attrs" v-on="on">Projects / Demos</h3>
+                                            <h4 v-bind="attrs" v-on="on">Projects / Demos</h4>
                                         </template>
                                         <span>Done or in progress projects.</span>
                                     </v-tooltip>
@@ -476,16 +478,17 @@
                             </v-sheet>
                         </v-sheet>
 
-                        <v-sheet class="mt-10 mx-15 text-wrap text-center text-caption">
-                            Web page built with <b>VUE.JS</b>,
+                        <v-sheet class="mt-5 mx-15 text-wrap text-center text-caption">
+                            Responsive web page built with <b>VUE.JS</b>,
                             a framework running over <b>NODE.JS</b>, using <b>JAVASCRIPT</b>, <b>HTML</b> and <b>CSS</b>.
                             In addition, to faster and beauty design I used <b>VUETIFY</b> UI library and some <b>MATERIAL DESIGN ICONS</b>.
                             All hosted in a Linux <b>UBUNTU</b>
                             dedicated server at <b>DIGITALOCEAN</b> cloud infraestructure. Version control by <b>GIT</b> and <b>GITHUB</b>.
-                            Reverse proxy with <b>NGINX</b>. <b>SSL</b> certification with <b>CERTBOT</b> and Linux process management with <b>PM2</b>.
+                            Reverse proxy with <b>NGINX</b>. <b>SSL</b> certification with <b>CERTBOT</b> and Linux process management with <b>PM2</b> | screen res:
+                            {{$vuetify.breakpoint.width}}x{{$vuetify.breakpoint.height}}
                         </v-sheet>
-                        <v-sheet class="my-3 mx-15 text-subtitle-2 elevation-0">
-                            2022 | jvictorjs
+                        <v-sheet class="my-2 mx-5 text-subtitle-1 elevation-0 text-center" width="200">
+                            <i style="font-size: 69%">maintened by jvictorjs | 2022</i>
                         </v-sheet>
                     </v-sheet>
                 </v-hover>
